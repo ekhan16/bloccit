@@ -1,6 +1,6 @@
 class PostPolicy < ApplicationPolicy
-end
 
-def index?
-  true
+  def index?
+    true
+  end
 end

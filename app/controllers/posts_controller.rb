@@ -1,14 +1,12 @@
 class PostsController < ApplicationController
-  def index
-    @posts = Post.all
-    authorize @posts
-  end
 
   def show
+    @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
   end
 
   def new
+    @topic = Topic.find(params[:topic_id])
     @post = Post.new
       authorize @post
   end
@@ -26,6 +24,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
     authorize @post
   end
