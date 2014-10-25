@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+# Carrierwave image
+public/uploads
+
 # Ignore environment variables
 /config/application.yml
 /config/initializers/secret_token.rb
