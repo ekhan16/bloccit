@@ -25,4 +25,7 @@
         <%= pluralize(@post.down_votes, 'down vote') %>
       </small>
   </div>
+  <div>
+    <%= render partial: "comments/form" if current_user %>
+  </div>
 </div>
