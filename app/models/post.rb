@@ -17,6 +17,10 @@ class Post < ActiveRecord::Base
     votes.where(value: 1, value: -1).sum
   end
 
+  def create_vote
+    user.votes.create(value: 1, post: self)
+  end
+
   default_scope { order('rank DESC') }
 
   validates :title, length: { minimum: 5 }, presence: true
