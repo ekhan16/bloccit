@@ -21,3 +21,7 @@ end
 def favorited(post)
   favorites.where(post_id: post.id).first
 end
+
+def voted(post)
+  current_user.votes.where(post_id: post.id).first
+end
