@@ -42,6 +42,7 @@ class PostsController < ApplicationController
       flash[:error] = "There was an error saving the post. Please try again."
       render :edit
     end
+  end
 
   def destroy
     @topic = Topic.find(params[:topic_id])
@@ -57,10 +58,10 @@ class PostsController < ApplicationController
       render :show
     end
   end
-end
 
-private
+  private
 
-def post_params
-  params.require(:post).permit(:title, :body, :image)
+  def post_params
+    params.require(:post).permit(:title, :body, :image)
+  end
 end
