@@ -2,13 +2,13 @@
  
  describe VotesController do 
  
-   include TestFactories
+   include FactoryGirl
    include Devise::TestHelpers
 
    before do
     request.env["HTTP_REFERER"] = '/'
-       @user = authenticated_user
-       @post = associated_post
+       @user = user
+       @post = post
        sign_in @user
  
    describe '#up_vote' do

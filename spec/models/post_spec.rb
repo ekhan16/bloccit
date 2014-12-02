@@ -2,11 +2,11 @@ require 'rails_helper'
 
 describe Post do
 
-  include TestFactories
+  include FactoryGirl
   describe "vote methods" do
 
     before do
-      @post = associated_post
+      @post = post
       3.times { @post.votes.create( value: 1) }
       2.times { @post.votes.create(value: -1) }
     end
